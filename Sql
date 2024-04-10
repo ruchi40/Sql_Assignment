@@ -3,7 +3,8 @@ show databases;
 create database sql_assignment;
 
 use sql_assignment;
---------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+
 create table users (
 user_id int primary key,
 name varchar(225),
@@ -62,6 +63,24 @@ insert into person(id, email) values(3, 'john@example.com');
 select * from person;
 delete from person where
 
+-----------------------------------------------------------------------------------------------
+
+create table patients(
+patient_id int primary key,
+patient_name varchar(255),
+conditions varchar(255)
+);
+
+insert into patients(patient_id, patient_name, conditions) values(1, 'Daniel', 'YFEV COUGH');
+insert into patients(patient_id, patient_name, conditions) values(2, 'Alice', '  ');
+insert into patients(patient_id, patient_name, conditions) values(3, 'Bob', 'DIAB100 MYOP');
+insert into patients(patient_id, patient_name, conditions) values(4, 'George', 'DIAB100 ACNE');
+insert into patients(patient_id, patient_name, conditions) values(5, 'Alain', 'DIAB201');
+select * from patients; 
+select patient_id, patient_name, conditions
+from patients
+where conditions like 'DIAB1%';
+-----------------------------------------------------------------------------------------------
 
 
 
