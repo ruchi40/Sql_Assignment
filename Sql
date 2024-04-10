@@ -1,0 +1,67 @@
+show databases;
+
+create database sql_assignment;
+
+use sql_assignment;
+--------------------------------------------------------------------------
+create table users (
+user_id int primary key,
+name varchar(225),
+mail varchar(255)
+);
+insert into users(user_id, name, mail) values (1, 'Winston', 'winstom@leetcode.com');
+insert into users(user_id, name, mail) values (2, 'Jonathan', 'jonathanisgreat');
+insert into users(user_id, name, mail) values (3, 'Annabelle', 'bella-@leetcode.com');
+insert into users(user_id, name, mail) values (4, 'Sally', 'sally.come@leetcode.com');
+insert into users(user_id, name, mail) values (5, 'Marwan', 'quarz#2020@leetcode.com');
+insert into users(user_id, name, mail) values (6, 'David', 'david69@gmail.com');
+insert into users(user_id, name, mail) values (7, 'Shapiro', '.shapo@leetcode.com');
+
+select * from users;
+select * from users where mail LIKE '%@leetcode.com';
+-----------------------------------------------------------------------------------------------
+
+create table activities(
+sell_date date,
+product varchar(255) );
+insert into activities(sell_date, product) values('2020-05-30', 'Headphone');
+insert into activities(sell_date, product) values('2020-06-01', 'Pencil');
+insert into activities(sell_date, product) values('2020-06-01', 'Mask');
+insert into activities(sell_date, product) values('2020-05-30', 'Basketball');
+insert into activities(sell_date, product) values('2020-06-01', 'Bible');
+insert into activities(sell_date, product) values('2020-06-02', 'Mask');
+insert into activities(sell_date, product) values('2020-05-30', 'T-Shirt');
+select * from activities;
+select sell_date, count(distinct product) as num_sold,product from activities
+group by sell_date order by sell_date ;
+
+-----------------------------------------------------------------------------------------------
+
+create table employee(
+id int primary key, 
+salary int );
+
+insert into employee(id,salary) values(1,100);
+insert into employee(id,salary) values(2, 200);
+insert into employee(id,salary) values(3, 300);
+
+select * from employee;
+---------For secondhighestSalary----------
+select max(salary) as SecondHighestSalary from employee
+where salary < (select max(salary) from employee);
+---------For Null value-------------
+select min(salary) as SecondHighestSalary from employee
+where salary < (select min(salary) from employee);
+
+-----------------------------------------------------------------------------------------------
+
+create table person(id int primary key, email varchar(255) );
+insert into person(id, email) values(1, 'john@example.com');
+insert into person(id, email) values(2, 'bob@example.com');
+insert into person(id, email) values(3, 'john@example.com');
+select * from person;
+delete from person where
+
+
+
+
